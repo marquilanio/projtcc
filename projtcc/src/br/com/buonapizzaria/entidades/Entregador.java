@@ -11,7 +11,7 @@ public class Entregador extends Pessoa {
 	private String enderecoEntregador; 
 	private String cidadeEntregador; 
 	private String cepEntregador;
-	private String foneContato;
+	private String foneContatoEntregador;
 	private String categoriaHabilitacaoEntregador;
 	private String numeroHabilitacaoEntregador;
 	
@@ -57,11 +57,11 @@ public class Entregador extends Pessoa {
 	public void setCepEntregador(String cepEntregador) {
 		this.cepEntregador = cepEntregador;
 	}
-	public String getFoneContato() {
-		return foneContato;
+	public String getFoneContatoEntregador() {
+		return foneContatoEntregador;
 	}
-	public void setFoneContato(String foneContato) {
-		this.foneContato = foneContato;
+	public void setFoneContatoEntregador(String foneContatoEntregador) {
+		this.foneContatoEntregador = foneContatoEntregador;
 	}
 	public String getCategoriaHabilitacaoEntregador() {
 		return categoriaHabilitacaoEntregador;

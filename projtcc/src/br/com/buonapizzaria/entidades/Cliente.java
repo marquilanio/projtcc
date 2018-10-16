@@ -1,20 +1,17 @@
 package br.com.buonapizzaria.entidades;
 
-import java.sql.Date;
-
 public class Cliente extends Pessoa {
 	
 	private Integer idCliente;
 	private String nomeCliente;
 	private String cpfCliente;
 	private String rgCliente;
-	private Date dataNascimentoCliente; 
-	private String EnderecoCliente; 
+	private String dataNascimentoCliente; 
+	private String enderecoCliente; 
 	private String cidadeCliente; 
 	private String cepCliente; 
 	private String loginCliente; 
 	private String senhaCliente;
-	
 	
 	public Integer getIdCliente() {
 		return idCliente;
@@ -40,17 +37,17 @@ public class Cliente extends Pessoa {
 	public void setRgCliente(String rgCliente) {
 		this.rgCliente = rgCliente;
 	}
-	public Date getDataNascimentoCliente() {
+	public String getDataNascimentoCliente() {
 		return dataNascimentoCliente;
 	}
-	public void setDataNascimentoCliente(Date dataNascimentoCliente) {
-		this.dataNascimentoCliente = dataNascimentoCliente;
+	public void setDataNascimentoCliente(String data) {
+		this.dataNascimentoCliente = data;
 	}
 	public String getEnderecoCliente() {
-		return EnderecoCliente;
+		return enderecoCliente;
 	}
 	public void setEnderecoCliente(String enderecoCliente) {
-		EnderecoCliente = enderecoCliente;
+		this.enderecoCliente = enderecoCliente;
 	}
 	public String getCidadeCliente() {
 		return cidadeCliente;
