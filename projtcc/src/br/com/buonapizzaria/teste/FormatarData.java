@@ -1,6 +1,9 @@
 package br.com.buonapizzaria.teste;
 
 import java.util.Date;
+
+import javax.swing.JOptionPane;
+
 import java.text.SimpleDateFormat;
 
 public class FormatarData {
@@ -32,4 +35,17 @@ public class FormatarData {
         data = format.format(d1);
         return data;
 	}
+	
+	public java.sql.Date converteDataUtilToSql(Date data) {
+        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        Date dataUtil = data;
+        java.sql.Date dataSql = null;
+        try {
+            dataUtil = new java.sql.Date(dataUtil.getTime());
+            dataSql = (java.sql.Date) dataUtil;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao converte data para sql: " + e.getMessage());
+        }
+        return dataSql;
+    }
 }

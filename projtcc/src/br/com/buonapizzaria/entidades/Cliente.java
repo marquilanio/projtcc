@@ -1,12 +1,14 @@
 package br.com.buonapizzaria.entidades;
 
+import java.util.Date;
+
 public class Cliente extends Pessoa {
 	
 	private Integer idCliente;
 	private String nomeCliente;
 	private String cpfCliente;
 	private String rgCliente;
-	private String dataNascimentoCliente; 
+	private Date dataNascimentoCliente; 
 	private String enderecoCliente; 
 	private String cidadeCliente; 
 	private String cepCliente; 
@@ -37,11 +39,11 @@ public class Cliente extends Pessoa {
 	public void setRgCliente(String rgCliente) {
 		this.rgCliente = rgCliente;
 	}
-	public String getDataNascimentoCliente() {
+	public Date getDataNascimentoCliente() {
 		return dataNascimentoCliente;
 	}
-	public void setDataNascimentoCliente(String data) {
-		this.dataNascimentoCliente = data;
+	public void setDataNascimentoCliente(Date dtConv) {
+		this.dataNascimentoCliente = dtConv;
 	}
 	public String getEnderecoCliente() {
 		return enderecoCliente;
