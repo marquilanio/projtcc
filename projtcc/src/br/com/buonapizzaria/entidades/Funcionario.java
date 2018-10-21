@@ -8,7 +8,7 @@ public class Funcionario extends Pessoa {
 	private String nomeFuncionario;
 	private String cpfFuncionario;
 	private String rgFuncionario;
-	private Date dataFuncionario; 
+	private Date dataNascimentoFuncionario; 
 	private String EnderecoFuncionario; 
 	private String cidadeFuncionario; 
 	private String cepFuncionario;
@@ -43,11 +43,11 @@ public class Funcionario extends Pessoa {
 	public void setRgFuncionario(String rgFuncionario) {
 		this.rgFuncionario = rgFuncionario;
 	}
-	public Date getDataFuncionario() {
-		return dataFuncionario;
+	public Date getDataNascimentoFuncionario() {
+		return dataNascimentoFuncionario;
 	}
-	public void setDataFuncionario(Date dataFuncionario) {
-		this.dataFuncionario = dataFuncionario;
+	public void setDataNascimentoFuncionario(Date dataNascimentoFuncionario) {
+		this.dataNascimentoFuncionario = dataNascimentoFuncionario;
 	}
 	public String getEnderecoFuncionario() {
 		return EnderecoFuncionario;
@@ -102,5 +102,5 @@ public class Funcionario extends Pessoa {
 	}
 	public void setCodigoClienteFuncionario(String codigoClienteFuncionario) {
 		this.codigoClienteFuncionario = codigoClienteFuncionario;
-	}
+	}	
 }

@@ -15,8 +15,8 @@ public class TesteClienteDAO {
 
 	public static void main(String[] args) {
 	
-		TestCadastrar();
-		//TestAlterar();
+		//TestCadastrar();
+		TestAlterar();
 		//TestExcluir();
 		//TestBuscarTodos();
 	}
@@ -30,15 +30,15 @@ public class TesteClienteDAO {
 		java.sql.Date dtConv = java.sql.Date.valueOf(data);
 			
 		Cliente cli = new Cliente();
-		cli.setNomeCliente("Jao Torto");
-		cli.setCpfCliente("12463945691");
-		cli.setRgCliente("2003345008769");
+		cli.setNomeCliente("Wagner Silva");
+		cli.setCpfCliente("12463977777");
+		cli.setRgCliente("2003345004848");
 		cli.setDataNascimentoCliente(dtConv);
-		cli.setEnderecoCliente("Rua das Pitomba, 11 - Genipapo");
-		cli.setCidadeCliente("Vasco");
-		cli.setCepCliente("43556-000");
-		cli.setLoginCliente("jaotorto");
-		cli.setSenhaCliente("jao123");
+		cli.setEnderecoCliente("Rua das Acce, 10 - Genipapo");
+		cli.setCidadeCliente("Recife");
+		cli.setCepCliente("5100-000");
+		cli.setLoginCliente("bolsonaro");
+		cli.setSenhaCliente("bolso123");
 		
 		ClienteDAO usuDAO = new ClienteDAO();
 		usuDAO.cadastrar(cli);
@@ -54,8 +54,8 @@ public class TesteClienteDAO {
 		java.sql.Date dtConv = java.sql.Date.valueOf(data);
 		
 		Cliente cli = new Cliente();
-		cli.setIdCliente(12);
-		cli.setNomeCliente("Bobo Corvo");
+		cli.setIdCliente(18);
+		cli.setNomeCliente("Wagner Bolsonaro");
 		cli.setCpfCliente("854630873");
 		cli.setRgCliente("");
 		cli.setDataNascimentoCliente(dtConv);

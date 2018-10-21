@@ -9,7 +9,7 @@ public class Produto {
 	private String descricaoProduto;
 	private Integer numeroFatiasProduto;
 	private String unidadeMedidaProduto;
-	private BigDecimal precoUnitarioProduto; 
+	private double precoUnitarioProduto; 
 	private String tipoFabricacaoProduto; 
 	private Date dataFabricacaoProduto; 
 	private Integer ValidadeProdutoEmDias; 
@@ -40,10 +40,10 @@ public class Produto {
 	public void setUnidadeMedidaProduto(String unidadeMedidaProduto) {
 		this.unidadeMedidaProduto = unidadeMedidaProduto;
 	}
-	public BigDecimal getPrecoUnitarioProduto() {
+	public double getPrecoUnitarioProduto() {
 		return precoUnitarioProduto;
 	}
-	public void setPrecoUnitarioProduto(BigDecimal precoUnitarioProduto) {
+	public void setPrecoUnitarioProduto(double precoUnitarioProduto) {
 		this.precoUnitarioProduto = precoUnitarioProduto;
 	}
 	public String getTipoFabricacaoProduto() {
