@@ -16,9 +16,11 @@ public class TesteClienteDAO {
 	public static void main(String[] args) {
 	
 		//TestCadastrar();
-		TestAlterar();
+		//TestAlterar();
 		//TestExcluir();
 		//TestBuscarTodos();
+		//TestAutenticarCliente();
+		TestBuscarPorId();
 	}
 
 	private static void TestCadastrar() {
@@ -88,6 +90,32 @@ public class TesteClienteDAO {
 			}
 	}
 	
-
+	
+	private static void TestAutenticarCliente() {
+		
+		Cliente cliente = new Cliente();
+		cliente.setLoginCliente("jaotutu");
+		cliente.setSenhaCliente("jao123");
+		
+		ClienteDAO cliDAO = new ClienteDAO();
+		
+		System.out.println(cliDAO.autenticarCliente(cliente));;
+		
+	}
+	
+	private static void TestBuscarPorId() {
+		
+		ClienteDAO cliDAO = new ClienteDAO();
+		//System.out.println(cliDAO.buscarPorId(10));
+		
+		Cliente cliRetorno = cliDAO.buscarPorId(5);
+		
+		if (cliDAO != null) {
+			
+			System.out.println("Nome:" +cliRetorno.getNomeCliente());
+		}
+		
+		
+	}
 
 }

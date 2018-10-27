@@ -132,6 +132,75 @@ public class ClienteDAO {
 		
 		return lista;
 	}
-
+	
+	
+	public Cliente buscarPorId(Integer id) {
+		
+		String sql = "SELECT * FROM CLIENTE WHERE idcliente=?";
+		
+		Cliente cliente = null;
+		
+		try {
+			PreparedStatement preparador = con.prepareStatement(sql);
+			preparador.setInt(1, id);
+			
+			ResultSet resultado = preparador.executeQuery();
+			
+			if (resultado.next()) {
+				cliente = new Cliente();
+				cliente.setIdCliente(resultado.getInt("idcliente")); 
+				cliente.setNomeCliente(resultado.getString("nomecliente"));
+				cliente.setCpfCliente(resultado.getString("cpfcliente"));
+				cliente.setRgCliente(resultado.getString("rgcliente"));
+				cliente.setDataNascimentoCliente(resultado.getDate("datanascimentocliente"));
+				cliente.setEnderecoCliente(resultado.getString("enderecocliente"));
+				cliente.setCidadeCliente(resultado.getString("cidadecliente"));
+				cliente.setCepCliente(resultado.getString("cepcliente"));
+				cliente.setLoginCliente(resultado.getString("logincliente"));
+			}
+			
+		} catch (SQLException e) {
+			
+			System.out.println("Erro ao buscar o Cliente!");
+		}
+		return cliente;
+	}
+	
+	
+	public Cliente autenticarCliente(Cliente cliente) {
+		
+		String sql = "SELECT * FROM CLIENTE WHERE logincliente=? AND senhacliente=?";
+		
+		Cliente clienteRetorno = null;
+		
+		try {
+			PreparedStatement preparador = con.prepareStatement(sql);
+			preparador.setString(1, cliente.getLoginCliente());
+			preparador.setString(2, cliente.getSenhaCliente());
+			
+			ResultSet resultado = preparador.executeQuery();
+			
+			if (resultado.next()) {
+				clienteRetorno = new Cliente();
+				clienteRetorno.setIdCliente(resultado.getInt("idcliente")); 
+				clienteRetorno.setNomeCliente(resultado.getString("nomecliente"));
+				clienteRetorno.setCpfCliente(resultado.getString("cpfcliente"));
+				clienteRetorno.setRgCliente(resultado.getString("rgcliente"));
+				clienteRetorno.setDataNascimentoCliente(resultado.getDate("datanascimentocliente"));
+				clienteRetorno.setEnderecoCliente(resultado.getString("enderecocliente"));
+				clienteRetorno.setCidadeCliente(resultado.getString("cidadecliente"));
+				clienteRetorno.setCepCliente(resultado.getString("cepcliente"));
+				clienteRetorno.setLoginCliente(resultado.getString("logincliente"));
+				clienteRetorno.setLoginCliente(resultado.getString("senhacliente"));
+			}
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		return clienteRetorno;
+		
+	}
 
 }
