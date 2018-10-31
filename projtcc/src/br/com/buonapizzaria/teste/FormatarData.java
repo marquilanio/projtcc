@@ -7,13 +7,13 @@ import javax.swing.JOptionPane;
 import java.text.SimpleDateFormat;
 
 public class FormatarData {
-		
+	
 	public String formataDataJdbc(String data) {
 		
 		SimpleDateFormat f = new SimpleDateFormat("dd/mm/yyyy");
         Date d1 = null;
         try {
-            d1 = f.parse(data);            
+            d1 = f.parse(data);
         } catch (Exception e) {
             e.printStackTrace();
         }

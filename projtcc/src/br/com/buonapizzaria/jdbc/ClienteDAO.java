@@ -71,6 +71,16 @@ public class ClienteDAO {
 	}
 	
 	
+	public void salvar(Cliente cliente) {
+		if(cliente.getIdCliente()!=null && cliente.getIdCliente()!=0) {
+			alterar(cliente);
+		}
+		else {
+			cadastrar(cliente);
+		}
+	}
+	
+	
 	public void excluir(Cliente cliente) {
 		
 		String sql = "DELETE FROM CLIENTE WHERE idcliente=?";
