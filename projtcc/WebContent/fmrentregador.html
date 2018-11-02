@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Cadastro de Cliente</title>
+<title>Cadastro do Entregador</title>
 </head>
 <body>
 
-	<form action="clicontroller.do" method="post">
+	<form action="entrcontroller.do" method="post">
 		
-		<label>Código do Cliente: </label>
+		<label>Código do Entregador: </label>
 		<input type="text" name="txtid" value=" " size="20"/>
 		
 		<label>Nome: </label>
@@ -16,9 +16,6 @@
 		
 		<label>CPF: </label>
 		<input type="text" name="txtcpf" value=" "/>
-		
-		<label>RG: </label>
-		<input type="text" name="txtrg" value=" "/>
 		
 		<label>Data de Nascimento: </label>
 		<input type="date" name="dataNasc" value=" "/>
@@ -32,16 +29,18 @@
 		<label>CEP: </label>
 		<input type="text" name="txtcep" value=" "/>
 		
-		<label>Login: </label>
-		<input type="text" name="txtlogin" value=" "/>
+		<label>Fone de Contato: </label>
+		<input type="text" name="txtfone" value=" "/>
 		
-		<label>Senha: </label>
-		<input type="text" name="txtsenha" value=" "  maxlength="10" />
+		<label>Categoria da CNH: </label>
+		<input type="text" name="txtcategoria" value=" " maxlength="2"/>
+		
+		<label>Nº da CNH: </label>
+		<input type="text" name="txtnumcnh" value=" "/>
 		
 		<input type="submit" value="Salvar"/>
 		
-			
-	</form>
-
+		</form>	
+	
 </body>
 </html>

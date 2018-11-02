@@ -1,10 +1,7 @@
 package br.com.buonapizzaria.teste;
 
 import java.util.List;
-
-import br.com.buonapizzaria.entidades.Entregador;
 import br.com.buonapizzaria.entidades.Funcionario;
-import br.com.buonapizzaria.jdbc.EntregadorDAO;
 import br.com.buonapizzaria.jdbc.FuncionarioDAO;
 
 public class TesteFuncionarioDAO {

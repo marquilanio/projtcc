@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.buonapizzaria.entidades.Cliente;
 import br.com.buonapizzaria.entidades.Entregador;
 import br.com.buonapizzaria.entidades.Funcionario;
 
@@ -74,7 +73,17 @@ public class FuncionarioDAO {
 			} catch (SQLException e) {
 				System.out.println("Não foi possível alterar o Funcionário");
 			}	
+	}
+	
+	
+	public void salvar(Funcionario funcionario) {
+		if(funcionario.getIdFuncionario()!=null && funcionario.getIdFuncionario()!=0) {
+			alterar(funcionario);
 		}
+		else {
+			cadastrar(funcionario);
+		}
+	}
 	
 	
 	public void excluir(Funcionario funcionario) {

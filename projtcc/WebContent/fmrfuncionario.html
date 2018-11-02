@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Cadastro de Cliente</title>
+<title>Cadastro do Funcionário</title>
 </head>
 <body>
 
-	<form action="clicontroller.do" method="post">
+	<form action="funccontroller.do" method="post">
 		
-		<label>Código do Cliente: </label>
+		<label>Código do Funcionário: </label>
 		<input type="text" name="txtid" value=" " size="20"/>
 		
 		<label>Nome: </label>
@@ -32,16 +32,27 @@
 		<label>CEP: </label>
 		<input type="text" name="txtcep" value=" "/>
 		
+		<label>Cargo: </label>
+		<input type="text" name="txtcargo" value=" "/>
+		
+		<label>Tipo de Contratação: </label>
+		<input type="text" name="txttipocontratacao" value=" "/>
+		
+		<label>Escolaridade: </label>
+		<input type="text" name="txtescolaridade" value=" "/>
+		
 		<label>Login: </label>
 		<input type="text" name="txtlogin" value=" "/>
 		
 		<label>Senha: </label>
 		<input type="text" name="txtsenha" value=" "  maxlength="10" />
 		
+		<label>Código de Cliente: </label>
+		<input type="text" name="txtcodcliente" value=" " />
+		
 		<input type="submit" value="Salvar"/>
 		
-			
-	</form>
+		</form>		
 
 </body>
 </html>

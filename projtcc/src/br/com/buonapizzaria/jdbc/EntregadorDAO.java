@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import br.com.buonapizzaria.entidades.Cliente;
 import br.com.buonapizzaria.entidades.Entregador;
 
 public class EntregadorDAO {
@@ -67,6 +65,16 @@ private Connection con = Conexao.getConnection();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}	
+	}
+	
+	
+	public void salvar(Entregador entregador) {
+		if(entregador.getIdEntregador()!=null && entregador.getIdEntregador()!=0) {
+			alterar(entregador);
+		}
+		else {
+			cadastrar(entregador);
+		}
 	}
 	
 	

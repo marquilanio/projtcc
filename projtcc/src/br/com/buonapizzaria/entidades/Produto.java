@@ -1,6 +1,5 @@
 package br.com.buonapizzaria.entidades;
 
-import java.math.BigDecimal;
 import java.sql.Date;
 
 public class Produto {

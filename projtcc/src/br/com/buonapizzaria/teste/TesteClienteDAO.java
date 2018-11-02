@@ -1,13 +1,7 @@
 package br.com.buonapizzaria.teste;
 
-import java.text.Format;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.List;
 
+import java.util.List;
 import br.com.buonapizzaria.entidades.Cliente;
 import br.com.buonapizzaria.jdbc.ClienteDAO;
 
