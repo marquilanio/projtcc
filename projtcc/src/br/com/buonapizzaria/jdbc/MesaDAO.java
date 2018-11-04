@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import br.com.buonapizzaria.entidades.Funcionario;
 import br.com.buonapizzaria.entidades.Mesa;
 
 public class MesaDAO {
@@ -36,6 +38,7 @@ private Connection con = Conexao.getConnection();
 			
 		} catch (SQLException e) {
 			System.out.println("Erro ao cadastrar uma nova Mesa");
+	
 		}
 	}
 	
@@ -66,6 +69,16 @@ private Connection con = Conexao.getConnection();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}	
+	}
+	
+	
+	public void salvar(Mesa mesa) {
+		if(mesa.getIdMesa()!=null && mesa.getIdMesa()!=0) {
+			alterar(mesa);
+		}
+		else {
+			cadastrar(mesa);
+		}
 	}
 	
 	

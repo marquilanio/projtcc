@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import br.com.buonapizzaria.entidades.Mesa;
 import br.com.buonapizzaria.entidades.Produto;
 
 public class ProdutoDAO {
@@ -26,7 +28,7 @@ public class ProdutoDAO {
 			preparador.setString(5, produto.getTipoFabricacaoProduto());
 			preparador.setDate(6, produto.getDataFabricacaoProduto());
 			preparador.setInt(7, produto.getValidadeProdutoEmDias());
-			preparador.setString(8, produto.getDescricaoProduto());
+			preparador.setString(8, produto.getFornecedorProduto());
 			preparador.setString(9, produto.getInformacoesGeraisProduto());
 						
 			preparador.execute();
@@ -54,7 +56,7 @@ public class ProdutoDAO {
 			preparador.setString(5, produto.getTipoFabricacaoProduto());
 			preparador.setDate(6, produto.getDataFabricacaoProduto());
 			preparador.setInt(7, produto.getValidadeProdutoEmDias());
-			preparador.setString(8, produto.getDescricaoProduto());
+			preparador.setString(8, produto.getFornecedorProduto());
 			preparador.setString(9, produto.getInformacoesGeraisProduto());
 			preparador.setInt(10, produto.getIdProduto());
 		
@@ -66,6 +68,16 @@ public class ProdutoDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}	
+	}
+	
+	
+	public void salvar(Produto produto) {
+		if(produto.getIdProduto()!=null && produto.getIdProduto()!=0) {
+			alterar(produto);
+		}
+		else {
+			cadastrar(produto);
+		}
 	}
 	
 	

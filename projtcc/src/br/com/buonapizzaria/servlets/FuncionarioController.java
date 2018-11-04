@@ -3,13 +3,11 @@ package br.com.buonapizzaria.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import br.com.buonapizzaria.entidades.Entregador;
 import br.com.buonapizzaria.entidades.Funcionario;
 import br.com.buonapizzaria.jdbc.FuncionarioDAO;
@@ -54,8 +52,11 @@ public class FuncionarioController extends HttpServlet {
 		
 		Funcionario funcionario = new Funcionario();
 		
+		Boolean UPDT = false;
+		
 		if(id!=null && id!="" && id!="0") {	
 			funcionario.setIdFuncionario(Integer.parseInt(id));
+			UPDT = true;
 		}
 		funcionario.setNomeFuncionario(nome);
 		funcionario.setCpfFuncionario(cpf);
@@ -75,7 +76,13 @@ public class FuncionarioController extends HttpServlet {
 		funcDAO.salvar(funcionario);
 		
 		PrintWriter saida1 = response.getWriter();
-		saida1.println("Funcionário atualizado com sucesso!");
+		
+		if(UPDT) {
+			saida1.println("Produto atualizado com sucesso!");
+		}
+		else {
+			saida1.println("Produto cadastrado com sucesso!");
+		}	
 	
 	}
 

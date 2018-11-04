@@ -51,8 +51,11 @@ public class ClienteController extends HttpServlet {
 		
 		Cliente cliente = new Cliente();
 		
+		Boolean UPDT = false;
+		
 		if(id!=null && id!="" && id!="0") {	
 			cliente.setIdCliente(Integer.parseInt(id));
+			UPDT = true;
 		}
 		cliente.setNomeCliente(nome);
 		cliente.setCpfCliente(cpf);
@@ -69,7 +72,13 @@ public class ClienteController extends HttpServlet {
 		clieDAO.salvar(cliente);
 		
 		PrintWriter saida1 = response.getWriter();
-		saida1.println("Cliente atualizado com sucesso!");
+		
+		if(UPDT) {
+			saida1.println("Cliente atualizado com sucesso!");
+		}
+		else {
+			saida1.println("Cliente cadastrado com sucesso!");
+		}	
 	}
 
 }

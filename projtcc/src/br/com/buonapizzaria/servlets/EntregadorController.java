@@ -48,8 +48,11 @@ public class EntregadorController extends HttpServlet {
 		
 		Entregador entregador = new Entregador();
 		
+		Boolean UPDT = false;
+		
 		if(id!=null && id!="" && id!="0") {	
 			entregador.setIdEntregador(Integer.parseInt(id));
+			UPDT = true;
 		}
 		entregador.setNomeEntregador(nome);
 		entregador.setCpfEntregador(cpf);
@@ -66,7 +69,13 @@ public class EntregadorController extends HttpServlet {
 		entreDAO.salvar(entregador);
 		
 		PrintWriter saida1 = response.getWriter();
-		saida1.println("Entregador atualizado com sucesso!");
+		
+		if(UPDT) {
+			saida1.println("Entregador atualizado com sucesso!");
+		}
+		else {
+			saida1.println("Entregador cadastrado com sucesso!");
+		}	
 	
 	}
 
