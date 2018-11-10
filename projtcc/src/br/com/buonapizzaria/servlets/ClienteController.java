@@ -3,6 +3,8 @@ package br.com.buonapizzaria.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.*;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -25,10 +27,26 @@ public class ClienteController extends HttpServlet {
 		System.out.println("Chamando método Get");
 		
 		ClienteDAO clieDAO = new ClienteDAO();
-		List<Cliente> listaCliente = clieDAO.buscarTodos();
+		String acao = request.getParameter("acao");
 		
-		PrintWriter saida = response.getWriter();
-		saida.println(saida);
+		if (acao!=null && acao.equals("exc")) {
+			
+			String id = request.getParameter("id");
+			
+			Cliente cli = new Cliente();
+			cli.setIdCliente(Integer.parseInt(id));
+			
+			clieDAO.excluir(cli);
+			
+		}
+		
+		List<Cliente> lista = clieDAO.buscarTodos();
+		
+		request.setAttribute("ListaCliente", lista);
+		
+		RequestDispatcher saida = request.getRequestDispatcher("listaclientes.jsp");
+		saida.forward(request, response);
+		
 		
 	}
 
